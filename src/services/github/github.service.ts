@@ -1,0 +1,16 @@
+export interface GetAllCommitsInput {
+    repo: string;
+}
+
+export interface GetAllGitHubCommitsOutput {
+    id: string;
+    name: string;
+    message: string;
+    avatarUrl: string;
+    profileUrl: string;
+  }
+  
+
+export interface Github {
+    getAllCommits(input: GetAllCommitsInput): Promise<GetAllGitHubCommitsOutput[]>;
+}

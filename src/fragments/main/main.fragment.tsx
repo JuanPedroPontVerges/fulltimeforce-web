@@ -1,16 +1,17 @@
 import React from "react";
-import { Col, Row, Typography } from "antd";
+import { Col, Row, Typography, List } from "antd";
 import { MainFragmentProps } from "./interfaces";
 import "./main.scss";
 
 import HeaderComponent from "../../components/header/header.component";
 import { Content } from "antd/lib/layout/layout";
 import CommitCard from "components/commit-card/commit-card.component";
+import { useMainController } from "fragments/main/main.controller";
 
 export const MainFragment: React.FC<MainFragmentProps> = (props) => {
   // Render
-  //   const { useController = useMainController } = props;
-  //   const controller = useController();
+  const { useController = useMainController } = props;
+  const controller = useController();
   return (
     <div className={"main"}>
       <HeaderComponent></HeaderComponent>
@@ -26,7 +27,25 @@ export const MainFragment: React.FC<MainFragmentProps> = (props) => {
             </Row>
             <Row>
               <Col xs={24} xxl={24}>
-                <CommitCard></CommitCard>
+                <List
+                  pagination={{ defaultPageSize: 9 }}
+                  grid={{
+                    gutter: 16,
+                    xs: 1,
+                    sm: 1,
+                    md: 2,
+                    lg: 3,
+                    xl: 3,
+                    xxl: 3,
+                  }}
+                  className={"list"}
+                  dataSource={controller.commits}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <CommitCard {...item}></CommitCard>
+                    </List.Item>
+                  )}
+                />
               </Col>
             </Row>
           </Col>

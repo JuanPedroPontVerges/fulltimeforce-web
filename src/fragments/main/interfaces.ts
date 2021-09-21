@@ -1,5 +1,7 @@
+import { GetAllGitHubCommitsOutput } from "services/github/github.service";
+
 export interface MainViewController {
-    example?: string;
+    commits: GetAllGitHubCommitsOutput[] | undefined
 }
 
 export interface MainFragmentProps {
