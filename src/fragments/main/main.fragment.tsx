@@ -18,7 +18,7 @@ export const MainFragment: React.FC<MainFragmentProps> = (props) => {
       <Content>
         <Row>
           <Col xxl={24}>
-            <Row align='middle'>
+            <Row align="middle">
               <Col>
                 <Typography.Title className={"title"}>
                   Welcome to GitHub Commits Logger
