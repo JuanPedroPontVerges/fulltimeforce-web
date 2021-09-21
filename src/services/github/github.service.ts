@@ -8,6 +8,7 @@ export interface GetAllGitHubCommitsOutput {
     message: string;
     avatarUrl: string;
     profileUrl: string;
+    date: Date;
   }
   
 

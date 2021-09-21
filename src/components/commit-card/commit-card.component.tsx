@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Image, Typography } from "antd";
 import "./commit-card.scss";
+import dayjs from "dayjs";
 
 export interface CommitCardProps {
   id: string;
@@ -8,6 +9,7 @@ export interface CommitCardProps {
   message: string;
   avatarUrl: string;
   profileUrl: string;
+  date: Date;
 }
 
 const CommitCard: React.FC<CommitCardProps> = (props) => {
@@ -26,6 +28,10 @@ const CommitCard: React.FC<CommitCardProps> = (props) => {
       <div className="info-box">
         <Typography.Title level={5}>Message: </Typography.Title>
         <Typography.Paragraph>{props.message}</Typography.Paragraph>
+      </div>
+      <div className="info-box">
+        <Typography.Title level={5}>Date: </Typography.Title>
+        <Typography.Paragraph>{dayjs(props.date).format('DD/MM/YYYY')}</Typography.Paragraph>
       </div>
       <Image src={props.avatarUrl} preview={false}></Image>
     </Card>
