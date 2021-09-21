@@ -19,13 +19,10 @@ export const MainFragment: React.FC<MainFragmentProps> = (props) => {
         <Row>
           <Col xxl={24}>
             <Row align='middle'>
-              <Col xxl={20}>
+              <Col>
                 <Typography.Title className={"title"}>
                   Welcome to GitHub Commits Logger
                 </Typography.Title>
-              </Col>
-              <Col xxl={4}>
-                <Input placeholder='search for commit...' onChange={controller.inputOnChange}></Input>
               </Col>
             </Row>
             <Row>
