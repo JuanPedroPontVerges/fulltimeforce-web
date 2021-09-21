@@ -28,7 +28,7 @@ export const MainFragment: React.FC<MainFragmentProps> = (props) => {
             <Row>
               <Col xs={24} xxl={24}>
                 <List
-                  pagination={{ defaultPageSize: 9 }}
+                  pagination={{ defaultPageSize: 6 }}
                   grid={{
                     gutter: 16,
                     xs: 1,

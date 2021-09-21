@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "antd";
+import { Card, Image, Typography } from "antd";
+import "./commit-card.scss";
 
 export interface CommitCardProps {
   id: string;
@@ -11,12 +12,22 @@ export interface CommitCardProps {
 
 const CommitCard: React.FC<CommitCardProps> = (props) => {
   return (
-    <Card title="Card title" bordered={false}>
-      Card content id: {props.id}
-      name: {props.name}
-      message: {props.message}
-      avatarUrl: {props.avatarUrl}
-      profileUrl: {props.profileUrl}
+    <Card className={"card-container"} title={props.name} bordered={false}>
+      <div className="info-box">
+        <Typography.Title level={5}>Message: </Typography.Title>
+        <Typography.Paragraph>{props.message}</Typography.Paragraph>
+      </div>
+      <div className="info-box">
+        <Typography.Title level={5}>Profile: </Typography.Title>
+        <a target="blank" href={`https://github.com/${props.name}`}>
+          <Typography.Link>{props.name}</Typography.Link>
+        </a>
+      </div>
+      <div className="info-box">
+        <Typography.Title level={5}>Message: </Typography.Title>
+        <Typography.Paragraph>{props.message}</Typography.Paragraph>
+      </div>
+      <Image src={props.avatarUrl} preview={false}></Image>
     </Card>
   );
 };

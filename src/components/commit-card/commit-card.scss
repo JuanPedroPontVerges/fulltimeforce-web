@@ -1,0 +1,35 @@
+@import 'src/base';
+
+.card-container {
+    min-height: 300px;
+    border-radius: 2%;
+
+    .ant-card-head-title {
+        font-size: 24px;
+    }
+
+    div .ant-typography {
+        text-transform: capitalize;
+    }
+
+    .info-box {
+        display: flex;
+        align-items: baseline;
+        padding: 1%;
+        border: 1px solid black;
+        border-radius: 1%;
+        margin: 10px 0;
+
+        h5 {
+            padding: 0 3px;
+        }
+
+    }
+
+    .ant-image {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+}
