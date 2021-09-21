@@ -1,7 +1,7 @@
 @import 'src/base';
 
 .card-container {
-    min-height: 300px;
+    min-height: 600px;
     border-radius: 2%;
 
     .ant-card-head-title {
@@ -19,11 +19,17 @@
         border: 1px solid black;
         border-radius: 1%;
         margin: 10px 0;
+        min-height: 80px;
+
 
         h5 {
             padding: 0 3px;
         }
 
+    }
+
+    .info-box:nth-child(2) {
+        min-height: 10px;
     }
 
     .ant-image {
