@@ -1,0 +1,15 @@
+@import 'src/base';
+
+.main {
+    background: $primary-color;
+
+    .ant-layout-content {
+        margin: 4% 8%;
+
+        h1.ant-typography {
+            color: $content-color;
+        }
+
+    }
+}
+

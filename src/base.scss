@@ -1,0 +1,36 @@
+$primary-color: #0C1116;
+$secondary-color: #E5E5E5;
+$tertiary-color: #38C976;
+$content-color: #F0F2F5;
+$danger-color: red;
+$black: rgb(38, 38, 38);
+$white: #fff;
+$small: 5px;
+$medium: 25px;
+$large: 50px;
+
+.ant-layout-header {
+    background: #12233B !important;
+    height: 150px !important;
+
+    .ant-menu-item a {
+        color: $white;
+    }
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+
+html,
+body,
+#root,
+#root>div:first-of-type,
+.main,
+.ant-layout,
+.ant-layout-content,
+.ant-layout-content>div:first-of-type,
+main.ant-layout-content {
+    height: 100%;
+}
