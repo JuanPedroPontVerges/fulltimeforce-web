@@ -21,16 +21,3 @@ $large: 50px;
 .rounded {
     border-radius: 5px;
 }
-
-
-html,
-body,
-#root,
-#root>div:first-of-type,
-.main,
-.ant-layout,
-.ant-layout-content,
-.ant-layout-content>div:first-of-type,
-main.ant-layout-content {
-    height: 100%;
-}

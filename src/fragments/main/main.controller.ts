@@ -15,9 +15,7 @@ export const useMainController = (githubService = useAPIGitHub()): MainViewContr
     const fetchComits = async () => {
         const frontEndRepoCommits = await githubService.getAllCommits({repo:'fulltimeforce-web'})
         const backendCommits = await githubService.getAllCommits({repo:'fulltimeforce-be'})
-        console.log('frontend',frontEndRepoCommits);
-        setCommits([...frontEndRepoCommits])
-        console.log('');
+        setCommits([...frontEndRepoCommits, ...backendCommits])
     }
 
     return {commits};
