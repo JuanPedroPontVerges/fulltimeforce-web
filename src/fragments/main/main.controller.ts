@@ -7,6 +7,7 @@ import { GetAllGitHubCommitsOutput } from "services/github/github.service";
 
 export const useMainController = (githubService = useAPIGitHub()): MainViewController => {
     const [commits, setCommits] = useState<GetAllGitHubCommitsOutput[]>([]);
+    const [loading, setIsLoading ] = useState(false);
 
     useEffect(() => {
         fetchComits()
@@ -18,5 +19,13 @@ export const useMainController = (githubService = useAPIGitHub()): MainViewContr
         setCommits([...frontEndRepoCommits, ...backendCommits])
     }
 
-    return {commits};
+    const inputOnChange = async (input: any) => {
+        console.log('input', input.target.value.toUpperCase());
+        const filteredCommits = commits.filter((commit) => {
+            commit.name.toUpperCase().includes(input.target.value.toUpperCase())
+        })
+        setCommits(filteredCommits)
+    }
+
+    return {commits, loading,inputOnChange};
 };

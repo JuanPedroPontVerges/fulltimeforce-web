@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Typography, List } from "antd";
+import { Col, Row, Typography, List, Input } from "antd";
 import { MainFragmentProps } from "./interfaces";
 import "./main.scss";
 
@@ -18,11 +18,14 @@ export const MainFragment: React.FC<MainFragmentProps> = (props) => {
       <Content>
         <Row>
           <Col xxl={24}>
-            <Row>
-              <Col xxl={24}>
+            <Row align='middle'>
+              <Col xxl={20}>
                 <Typography.Title className={"title"}>
                   Welcome to GitHub Commits Logger
                 </Typography.Title>
+              </Col>
+              <Col xxl={4}>
+                <Input placeholder='search for commit...' onChange={controller.inputOnChange}></Input>
               </Col>
             </Row>
             <Row>
